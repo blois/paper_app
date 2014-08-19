@@ -1,0 +1,79 @@
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_item.html">
+<link rel="import" href="../../packages/paper_elements/paper_menu_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_shadow.html">
+<link rel="import" href="../../packages/paper_elements/roboto.html">
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="app-view">
+  <template>
+    <style>
+    .root {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      font-size: 14px;
+      background: #f7f7f7;
+      height: 100%;
+    }
+
+    paper-button {
+      margin: 1em;
+      width: 10em;
+    }
+
+    paper-button.colored {
+      color: #4285f4;
+      fill: #4285f4;
+    }
+
+    paper-button[raisedButton].colored {
+      background: #4285f4;
+      color: #fff;
+    }
+
+    paper-button[raisedButton].colored #ripple,
+    paper-button[raisedButton].colored::shadow #ripple {
+      color: #2a56c6;
+    }
+
+    paper-button[raisedButton].colored #focusBg,
+    paper-button[raisedButton].colored::shadow #focusBg {
+      background: #3367d6;
+    }
+    </style>
+    <div class="root">
+      <paper-shadow></paper-shadow>
+      <div layout horizontal class="toolbar paper-shadow-top-z-1">
+        <div class="inner paper-shadow-bottom-z-1"></div>
+        <paper-menu-button icon="menu" halign="left">
+          <paper-item label="Menu Item 1"></paper-item>
+          <paper-item label="Menu Item 2"></paper-item>
+          <paper-item label="Menu Item 3"></paper-item>
+        </paper-menu-button>
+        <div flex></div>
+        <paper-icon-button icon="search"></paper-icon-button>
+        <paper-menu-button icon="more-vert" halign="right" slow>
+          <paper-item label="Refresh"></paper-item>
+          <paper-item label="Send Feedback"></paper-item>
+          <paper-item label="Settings"></paper-item>
+          <paper-item label="Help"></paper-item>
+          <paper-item label="Sign Out"></paper-item>
+        </paper-menu-button>
+      </div>
+      <div>
+        <br>
+
+        <section>
+          <paper-button raisedButton label="dummy">
+          </paper-button>
+            <paper-button raisedButton label="reload" on-click="{{reload}}">
+            </paper-button>
+        </section>
+      </div>
+    </div>
+  </template>
+  <script type="application/dart" src="app_view.dart"></script>
+</polymer-element>
+
